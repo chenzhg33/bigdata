@@ -1,3 +1,8 @@
+// using BloomFilter to calculate the average post length
+// of the student who's reputation is greater than 10
+// need three argument, first is forum_stduent file to genarate
+// the filter file, second is the forum_node file, third
+// is the ouput file
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.FileInputStream;
@@ -31,7 +36,12 @@ public class Task5 {
 	private static float falsePosRate = 0.0001f;
 	private static int numMembers = 5000;
 
+	// three argument, forum_student, forum_node, ouput
 	public static void main(String[] args) throws Exception {
+		if (args.length != 3) {
+			System.out.println("Need three argument: forum_student, forum_node, ouput");
+			return;
+		}
 		// Parse command line arguments
 		Path inputFile = new Path(args[0]);
 		Path bfFile = new Path("filter");
@@ -63,7 +73,7 @@ public class Task5 {
 					user_rep = fields[1].replace("\"", "").trim();
 					try {
 						if (Integer.parseInt(user_rep) < 11) {
-							filter.add(new Key(line.getBytes()));
+							filter.add(new Key(user_id.getBytes()));
 							++numElements;
 						}
 					} catch (Exception e) {
@@ -171,7 +181,7 @@ public class Task5 {
 					items = cur_line.toString().replace("\n", " ").split("\t");
 					if (items.length != item_count)
 						return;
-					String id = dequote(items[0]);
+					String id = dequote(items[3]);
 					if (filter.membershipTest(new Key(id.getBytes())))
 						return;
 					int body_len = dequote(items[4]).length();
@@ -180,7 +190,6 @@ public class Task5 {
 					context.write(key_id, value_len);
 				}
 				cur_line = new StringBuilder(line);
-				cur_line.append(line);
 			} else {
 				if (cur_line == null)
 					cur_line = new StringBuilder(line);

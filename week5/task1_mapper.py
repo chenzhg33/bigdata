@@ -17,16 +17,7 @@ def map_a_record(curr_line):
 		items = curr_line.replace("\n"," ").split("\t")
 		if not len(items)==item_count:
 				return
-
-		node_type = dequote(items[5])
-		assert(node_type in ["question", "answer", "comment"])
-		type = "q"
-		if node_type == "answer":
-				type = "a"
-		elif node_type == "comment":
-				type = "c"
-
-		print "{0}\t{1}".format(type, len(dequote(items[4])))
+		print len(dequote(items[4]))
 
 for line in sys.stdin:
 		if item_count==None:
