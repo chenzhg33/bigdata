@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="toplevel_id" mtime="1378422393" type="string">
+		<stringvalue>top_panel</stringvalue>
+	</entry>
+	<entry name="position" mtime="1378422393" type="int" value="200"/>
+	<entry name="launcher_location" mtime="1378422393" type="string">
+		<stringvalue>/usr/share/applications/gnome-terminal.desktop</stringvalue>
+	</entry>
+	<entry name="object_type" mtime="1378422393" type="string">
+		<stringvalue>launcher-object</stringvalue>
+	</entry>
+</gconf>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="secondary_color" mtime="1427015175" type="string">
+		<stringvalue>#14142c2c3d3d</stringvalue>
+	</entry>
+	<entry name="picture_filename" mtime="1427015175" type="string">
+		<stringvalue>/usr/share/backgrounds/cosmos/background-1.xml</stringvalue>
+	</entry>
+	<entry name="primary_color" mtime="1427015175" type="string">
+		<stringvalue>#22224b4b6868</stringvalue>
+	</entry>
+	<entry name="color_shading_type" mtime="1427015176" type="string">
+		<stringvalue>solid</stringvalue>
+	</entry>
+	<entry name="picture_options" mtime="1427015175" type="string">
+		<stringvalue>zoom</stringvalue>
+	</entry>
+</gconf>
